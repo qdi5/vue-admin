@@ -2,17 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { Button, Select, MessageBox, Message, Loading, Notification } from 'element-ui'
+import batVueUse from 'utils'
+import request from 'utils/request'
+import 'normalize.css'
+import { Button, Select, Form, FormItem, Input } from 'element-ui'
+
+batVueUse(Vue, [request, Button, Select, Form, FormItem, Input])
 Vue.config.productionTip = false
-Vue.use(Button)
-Vue.use(Select)
-Vue.prototype.$loading = Loading.service
-Vue.prototype.$msgbox = MessageBox
-Vue.prototype.$alert = MessageBox.alert
-Vue.prototype.$confirm = MessageBox.confirm
-Vue.prototype.$prompt = MessageBox.prompt
-Vue.prototype.$notify = Notification
-Vue.prototype.$message = Message
+
 new Vue({
   router,
   store,

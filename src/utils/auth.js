@@ -1,15 +1,15 @@
-import Cookies from 'js-cookie'
+import getCookie, { setCookie, removeCookie } from './cookies'
 
-const TOKEN_KEY = 'Admin-Token'
+const TOKEN_KEY = 'shop_web_admin_token'
 
-export function getToken () {
-  return Cookies.get(TOKEN_KEY)
+export default function getToken () {
+  return getCookie(TOKEN_KEY)
 }
 
 export function setToken (token) {
-  return Cookies.set(TOKEN_KEY, token)
+  return setCookie(TOKEN_KEY, token)
 }
 
 export function removeToken () {
-  return Cookies.remove(TOKEN_KEY)
+  return removeCookie(TOKEN_KEY)
 }
